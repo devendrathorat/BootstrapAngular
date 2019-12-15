@@ -1,0 +1,49 @@
+<!-- <p>directives-ex works!</p> -->
+
+
+
+<p [ngClass]="{classOne:cone,classTwo:ctwo}">Hello</p>
+<p [ngStyle]="{'background-color':devYellow}">Deva</p>
+
+
+<p appMydirective>Custom directive</p> <!--  custom directive -->
+
+<input type="text" class="form-control" name="empName" [(ngModel)]="empName">
+
+<h2>{{empName}}</h2>
+
+<!-- THIS IS  EXAMPLE OF ngIF and else  -->
+<input type="radio" name="radioBtn" (click)="divShowHide(true)">True
+
+<input type="radio" name="radioBtn" (click)="divShowHide(false)">False
+
+
+
+<h3 *ngIf="isvalid ;else elseStmtId">By using radio button div show if true</h3>
+
+<ng-template #elseStmtId>
+    <h3> False else</h3>
+</ng-template>
+
+
+<!-- THIS IS EXAMPLE OF TEMPLATE REFRENCE VARIABLE   "#,ref-" BY USING THIS  TWO VARIABLE TO GET DOM ELEMENT VALUE-->
+<input type="text" value="Dev" #eName>
+{{eName.value}}
+
+
+<h2>ng switch EXAMPLE</h2>
+<select (change)="eventTri($event)">
+    <option value="">select</option>
+    <option value="one">One</option>
+    <option value="two">two</option>
+    <option value="three">three</option>
+   
+</select>
+
+<div [ngSwitch]="selectChoice">
+
+    <h3 *ngSwitchCase="'one'">You are select one</h3>
+    <h3 *ngSwitchCase="'two'">You are select two</h3>
+    <h3 *ngSwitchCase="'three'">You are select three</h3>
+    <h3 *ngSwitchDefault>Default data</h3>
+</div>
